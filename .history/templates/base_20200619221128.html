@@ -42,14 +42,6 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static 'css/clean-blog.min.css' %}" rel="stylesheet" />
-    <!-- django CMS toolbar adjustment -->
-    {% if request.toolbar %}
-    <style>
-      .cms-toolbar-expanded .navbar.fixed-top {
-        margin-top: 45px;
-      }
-    </style>
-    {% endif %}
   </head>
 
   <body>
@@ -73,29 +65,40 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            {% with dropdown=True %}
-              {% show_menu 0 100 100 100 "includes/menu.html" %}
-            {% endwith %}
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="post.html">Sample Post</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
 
     <!-- Page Header -->
-    {% placeholder header or %}
-    <header class="masthead" style="background-image: url('{% static 'img/about-bg.jpg' %}')">
+    <header
+      class="masthead"
+      style="background-image: url('{% static 'img/about-bg.jpg' %}');"
+    >
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
-              <h1>{% page_attribute "page_title" %}</h1>
+              <h1>About Me</h1>
+              <span class="subheading">This is what I do.</span>
             </div>
           </div>
         </div>
       </div>
     </header>
-    {% endplaceholder %}
 
     <!-- Main Content -->
     <div class="container">
@@ -140,7 +143,7 @@
               </li>
             </ul>
             <p class="copyright text-muted">
-              Copyright &copy; Your Website 2020
+              Copyright &copy; Your Website 2019
             </p>
           </div>
         </div>
